@@ -53,9 +53,8 @@ for game in games_link:
     if game not in price.keys():
         price[game] = 0.0
     if price[game] == 0.0:            
-        price[game] = value_clear
-    elif price[game] <= value_clear:
-        print(f"Menor valor ja registrado foi de R${price[game]}")
+        price[game] = value_clear    
+    print(f"Menor valor ja registrado foi de R${price[game]}")
 
 
 with open("price.json", "w") as file:
