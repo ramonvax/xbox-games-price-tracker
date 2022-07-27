@@ -8,23 +8,18 @@ def linhas():
 
 games_link = {
     "Mafia 3": "https://www.xbox.com/pt-BR/games/store/mafia-iii-definitive-edition/BVZLS7XZ68KF/0001",
-    "Mafia Trilogy": "https://www.xbox.com/pt-br/games/store/mafia-trilogy/9NKG0X1MGQTX",
-    "The Witcher 3": "https://www.xbox.com/pt-br/games/store/the-witcher-3-wild-hunt/BR765873CQJD",
-    "The Witcher 3 COMPLETE": "https://www.xbox.com/pt-BR/games/store/the-witcher-3-wild-hunt-complete-edition/C261457LCNMJ/0001",
+    "Mafia Trilogy": "https://www.xbox.com/pt-br/games/store/mafia-trilogy/9NKG0X1MGQTX",    
     "The Witcher 2": "https://www.xbox.com/pt-BR/games/store/the-witcher-2/BTGZWQCD01JC/0001",
     "Cyberpunk 2077": "https://www.xbox.com/pt-BR/games/store/cyberpunk-2077/BX3M8L83BBRW/0001",
     "Elder Ring": "https://www.xbox.com/pt-BR/games/store/elden-ring/9P3J32CTXLRZ/0010",
     "Diablo 2": "https://www.xbox.com/pt-BR/games/store/diablo-prime-evil-collection/9N9LJ3N3TRZX/0010",
     "Dying Light Definitive Edition": "https://www.xbox.com/pt-BR/games/store/dying-light-definitive-edition/9N06V8XJ5G7L/0010",
-    "Far Cry Primal":  "https://www.xbox.com/pt-BR/games/store/far-cry-primal-apex-edition/BZGBDSSP6G2J/0001",
-    "Far Cry 5": "https://www.xbox.com/pt-BR/games/store/far-cry-5/BR7X7MVBBQKM/0001",
-    "Far Cry 5 GOLD": "https://www.xbox.com/pt-br/games/store/far-cry5-gold-edition/BWJK7NTJLKV9",
+    "Far Cry Primal":  "https://www.xbox.com/pt-BR/games/store/far-cry-primal-apex-edition/BZGBDSSP6G2J/0001",    
     "Red Dead Redemption 2": "https://www.xbox.com/pt-BR/games/store/red-dead-redemption-2/9N2ZDN7NWQKV/0010",
-    "Red Dead Redemption 2 DEFINITIVE": "https://www.xbox.com/pt-br/games/store/red-dead-redemption-2-edicao-definitiva/9ph339l3z99c",
-    "Watch Dogs 2": "https://www.xbox.com/pt-BR/games/store/watch-dogs2/BSXLFN5QQZSC/0001",
-    "Watch Dogs 2 GOLD": "https://www.xbox.com/pt-BR/games/store/watch-dogs2-gold-edition/BZFK7WNK7R4M/0001",
+    "Red Dead Redemption 2 DEFINITIVE": "https://www.xbox.com/pt-br/games/store/red-dead-redemption-2-edicao-definitiva/9ph339l3z99c",    
     "Watch Dogs Legion": "https://www.xbox.com/pt-BR/games/store/watch-dogs-legion/C1WRX8ZD77M9/0001",
-    "Watch Dogs Legion GOLD": "https://www.xbox.com/pt-BR/games/store/watch-dogs-legion-gold-edition/9N5V65564VWJ/0010",    
+    "Watch Dogs Legion GOLD": "https://www.xbox.com/pt-BR/games/store/watch-dogs-legion-gold-edition/9N5V65564VWJ/0010",
+    "Commandos 2 - HD Remaster": "https://www.xbox.com/pt-br/games/store/commandos-2-hd-remaster/9p1rhdkbn6qc"
 }
 
 try:
@@ -54,7 +49,9 @@ for game in games_link:
         value_clear = value_clear.replace("+", "")
     linhas()
     print(f"O jogo {game} esta de {value_clear}")
-    print(games_link[game])        
+    print(games_link[game])
+    if game not in price.keys():
+        price[game] = 0.0
     if price[game] == 0.0:            
         price[game] = value_clear
     elif price[game] <= value_clear:
